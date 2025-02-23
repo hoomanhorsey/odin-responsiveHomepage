@@ -1,0 +1,45 @@
+* {
+  font-family: "Courier New", Courier, monospace;
+  font-size: large;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-color: lightgreen;
+}
+
+.header,
+.main,
+.footer {
+  display: grid;
+  padding: 20px;
+  margin: 10px;
+  height: auto;
+  max-width: 800px;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-color: white;
+  }
+}
+
+.header {
+  background-color: lightpink;
+  justify-content: center;
+  align-content: center;
+}
+
+.main {
+  background-color: lightblue;
+  justify-content: center;
+  align-content: center;
+}
+
+.footer {
+  background-color: lightgoldenrodyellow;
+  justify-content: center;
+  align-content: center;
+}
