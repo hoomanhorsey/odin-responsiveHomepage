@@ -1,3 +1,5 @@
+/* Global settings */
+
 * {
   font-family: "Courier New", Courier, monospace;
   font-size: large;
@@ -5,10 +7,8 @@
 
 /* temporary borders around elements */
 
-header,
 main,
-footer,
-section {
+footer {
   border-width: 1px;
   border-color: black;
   border-style: dashed;
@@ -31,14 +31,20 @@ body {
   align-content: center; */
   background-color: lightgreen;
 
-  max-width: 400px;
+  /* min-width: 170px; width: (100%, 250px); */
+
+  /* max-width: 400px; */
 }
-.header {
-  flex-direction: column;
+
+/* titles */
+.aboutMeTitle,
+.mainTitle,
+.contactTitle {
+  display: flex;
+  justify-content: center;
+  font-size: clamp(1.5rem, 2rem, 4rem);
 }
-.main {
-  flex-direction: column;
-}
+
 .header,
 .main,
 .footer {
@@ -46,21 +52,32 @@ body {
   padding: 20px;
   margin: 10px;
   height: auto;
+
+  min-width: 170px; /* width: (100%, 250px); */
+  width: auto;
   /* max-width: 800px; */
 }
 
-.deviceBrowser,
+/* notice of viewport */
+/* .deviceBrowser,
 .deviceTablet,
 .deviceMobile {
   justify-self: center;
-}
+} */
 
+/* Default settings for mobile */
+.deviceMobile {
+  display: block;
+}
 .deviceTablet,
 .deviceBrowser {
   display: none;
 }
-
-/* Header stuff */
+/* header */
+.header {
+  display: flex;
+  flex-direction: column;
+}
 
 .headerPic {
   position: relative;
@@ -79,12 +96,13 @@ body {
   justify-content: center;
   /* align-items: center; */
 }
-.aboutMe {
-  position: relative;
-}
 
 /* Main stuff */
 
+/* main */
+.main {
+  flex-direction: column;
+}
 .mainTitle {
   display: flex;
   justify-content: center;
@@ -104,15 +122,27 @@ body {
   font-size: smaller;
 }
 
+/* footer */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (min-width: 500px) {
   body {
     background-color: white;
     max-width: 1000px;
   }
+
+  main {
+    display: flex;
+  }
   .projects {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
   }
 
   .deviceTablet {
@@ -121,6 +151,10 @@ body {
   .deviceMobile,
   .deviceBrowser {
     display: none;
+  }
+
+  .footer {
+    flex-direction: row;
   }
 }
 
