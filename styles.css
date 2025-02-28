@@ -82,13 +82,14 @@ body {
 }
 /* header */
 .header {
-  /* display: flex;
-  flex-direction: column; */
+  background: linear-gradient(135deg, #3498db 50%, white 50%);
 }
+
 
 .headerPic {
   position: relative;
   display: flex;
+  margin: 20px;
   /* /* justify-content: center; */
   /* justify-content: center; */
   /* align-content: center; */
@@ -109,8 +110,21 @@ body {
   /* justify-content: center; */
 }
 
+
+.aboutMeContainer {
+  flex: 1
+  background-color: transparent;
+}
+.aboutMeTitle {
+  background-color: transparent;
+}
 .aboutMeText {
-  margin: 10px;
+  margin: 20px;
+  background-color: transparent;
+}
+
+.headerLinks {
+  text-align: center;
 }
 
 /* Main stuff */
@@ -135,8 +149,13 @@ body {
 
   min-width: 160px;
   max-width: 300px;
-  padding: 20px 0px;
+  padding: 0px 0px;
   margin: 20px 0px;
+}
+.projectTitle {
+  padding: 3px;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .projectDescription {
@@ -168,7 +187,8 @@ body {
   }
 
   .project {
-    padding: 20px 10px;
+    padding: 0px 0px;
+    margin: 20px;
   }
 
   .deviceTablet {
@@ -182,6 +202,12 @@ body {
   .footer {
     flex-direction: row;
   }
+  .contactDetails {
+    flex: 1;
+  }
+  .footerPicContainer {
+    flex: 1;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -193,14 +219,19 @@ body {
   .header {
     flex-direction: row;
   }
-  .projects {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+
+  .headerPic {
+    flex: 1;
   }
-  .project {
-    padding: 20px 10px;
+
+.headerLinks {
+  display: none;
+}
+
+  .aboutMeContainer {
+    flex: 1;
   }
+
   .deviceBrowser {
     display: block;
   }
