@@ -3,7 +3,7 @@
 * {
   font-family: "Courier New", Courier, monospace;
   font-size: large;
-  background-color: white;
+  /* background-color: white; */
 }
 
 /* temporary borders around elements */
@@ -27,7 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
 }
 
 /* shadows */
@@ -85,7 +85,6 @@ body {
   background: linear-gradient(135deg, #3498db 50%, white 50%);
 }
 
-
 .headerPic {
   position: relative;
   display: flex;
@@ -97,7 +96,6 @@ body {
 .headerTitle {
   position: absolute;
   font-weight: bolder;
-  background-color: transparent;
   color: white;
 
   bottom: 0;
@@ -110,17 +108,18 @@ body {
   /* justify-content: center; */
 }
 
-
 .aboutMeContainer {
-  flex: 1
-  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  /* background-color: transparent; */
 }
 .aboutMeTitle {
-  background-color: transparent;
+  /* background-color: transparent; */
 }
 .aboutMeText {
   margin: 20px;
-  background-color: transparent;
+  /* background-color: transparent; */
 }
 
 .headerLinks {
@@ -176,6 +175,11 @@ body {
     max-width: 1000px;
   }
 
+  .aboutMeContainer {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    max-height: 500px;
+  }
   main {
     display: flex;
   }
@@ -212,25 +216,41 @@ body {
 
 @media (min-width: 1000px) {
   body {
-    background-color: lightskyblue;
+    /* background-color: lightskyblue; */
     max-width: 2000px;
   }
 
   .header {
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
   .headerPic {
     flex: 1;
+    margin: 10px 0px 10px 10px;
   }
 
-.headerLinks {
-  display: none;
-}
+  .headerLinks {
+    display: none;
+  }
 
   .aboutMeContainer {
     flex: 1;
+    /* margin-left: auto;
+    margin-right: auto; */
   }
+
+  /* .aboutMeTitle {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .aboutMeText {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  } */
 
   .deviceBrowser {
     display: block;
