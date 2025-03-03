@@ -4,6 +4,12 @@
   font-family: Roboto;
 }
 
+.svg,
+svg {
+  color: black;
+  height: 32px;
+  width: 32px;
+}
 body {
   margin: 0;
   padding: 0;
