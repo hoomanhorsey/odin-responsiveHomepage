@@ -3,38 +3,21 @@
 * {
   font-family: "Courier New", Courier, monospace;
   font-size: large;
-  /* background-color: white; */
 }
 
-/* temporary borders around elements */
-/* 
-main,
-footer {
-  border-width: 1px;
-  border-color: black;
-  border-style: dashed;
-  margin: 10px;
-  padding: 10px;
-} */
-
-/* div {
-  border-width: 1px;
-  border-color: black;
-  border-style: dashed;
-} */
-
 body {
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: lightgreen; */
+  max-width: 1200px;
 }
 
 /* shadows */
 .headerPic,
 .project,
 .footerPic {
-  /* box-shadow: 10px 10px; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -55,26 +38,19 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* padding: 20px; */
-  /* margin: 10px; */
-  padding: 20px 10px;
 
   height: auto;
-  min-width: 170px; /* width: (100%, 250px); */
-  width: auto;
-  /* max-width: 800px; */
+  min-width: 170px;
+  max-width: auto;
 }
-
-/* notice of viewport */
-/* .deviceBrowser,
-.deviceTablet,
-.deviceMobile {
-  justify-self: center;
-} */
+.header,
+.main {
+  padding: 20px 0px;
+}
 
 /* Default settings for mobile */
 .deviceMobile {
-  display: block;
+  display: none;
 }
 .deviceTablet,
 .deviceBrowser {
@@ -89,9 +65,6 @@ body {
   position: relative;
   display: flex;
   margin: 20px;
-  /* /* justify-content: center; */
-  /* justify-content: center; */
-  /* align-content: center; */
 }
 .headerTitle {
   position: absolute;
@@ -103,30 +76,26 @@ body {
   right: 0;
   font-size: clamp(3rem, 15vw, 6rem);
   text-align: center;
-  /* display: flex; */
-  /* align-content: center; */
-  /* justify-content: center; */
+}
+
+.headerTitle {
+  text-shadow: 2px 2px 5px black;
 }
 
 .aboutMeContainer {
   display: flex;
   flex-direction: column;
   flex: 1;
-  /* background-color: transparent; */
 }
 .aboutMeTitle {
-  /* background-color: transparent; */
 }
 .aboutMeText {
   margin: 20px;
-  /* background-color: transparent; */
 }
 
 .headerLinks {
   text-align: center;
 }
-
-/* Main stuff */
 
 /* main */
 .main {
@@ -147,9 +116,9 @@ body {
   flex-direction: column;
 
   min-width: 160px;
-  max-width: 300px;
+  max-width: 350px;
   padding: 0px 0px;
-  margin: 20px 0px;
+  margin: 10px 0px;
 }
 .projectTitle {
   padding: 3px;
@@ -159,7 +128,7 @@ body {
 
 .projectDescription {
   font-size: smaller;
-  padding: 10px;
+  padding: 20px;
 }
 
 /* footer */
@@ -169,16 +138,96 @@ body {
   flex-direction: column;
 }
 
-@media (min-width: 500px) {
+.footerPic {
+  display: flex;
+  /* height: 100%; Fill the full height of the parent */
+  flex-grow: 1;
+  max-width: 100%;
+  /* width: auto; Maintain aspect ratio */
+  object-fit: cover; /* Prevents distortion and fills the space */
+}
+
+.contactDetails {
+  padding: 40px;
+  background-color: #3498db;
+  color: white;
+}
+.contactText {
+  padding: 20px;
+}
+
+/* MEDIA ENQUIRIES */
+
+@media (min-width: 500px) and (max-width: 1000px) {
+  .heaader,
+  .main,
+  .footer {
+    max-width: auto; /* Match body’s max-width */
+    /* width: 100%; */
+    margin: 0 auto; /* Centers footer if needed */
+  }
+
   body {
     background-color: white;
     max-width: 1000px;
   }
 
+  .header {
+    background: linear-gradient(170deg, #3498db 50%, white 50%);
+  }
+  .header {
+    flex-direction: row;
+    position: relative;
+    align-self: center;
+    max-width: 100%;
+    /* justify-items: center; */
+  }
+
+  .headerPic {
+    flex: 1;
+    position: absolute;
+    min-width: 250px;
+    min-height: 250px;
+    max-width: 350px;
+    max-height: 350px;
+    left: 75px;
+    top: 0;
+    z-index: 1;
+    object-fit: cover;
+  }
+  .headerTitle {
+    max-width: 400px;
+    position: relative;
+    top: 0;
+    left: -50px;
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
   .aboutMeContainer {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: white;
     max-height: 500px;
+  }
+
+  .headerLinks {
+    display: none;
+  }
+  .aboutMeContainer {
+    margin-top: 90px;
+    margin-left: 5px;
+    /* min-width: max-content; */
+    min-height: 200px;
+    max-width: 250px;
+    max-height: 350px;
+    padding: 10px;
+  }
+  .aboutMeText {
+    position: absolute;
+
+    min-width: 100%;
+    min-height: 200px;
+    max-width: max-content;
+    max-height: 350px;
+    overflow-wrap: break-word;
   }
   main {
     display: flex;
@@ -210,14 +259,27 @@ body {
     flex: 1;
   }
   .footerPicContainer {
+    display: flex;
     flex: 1;
+    background-color: #3498db;
+  }
+
+  .footerPic {
+    flex: 1;
+    display: flex;
+    margin: 50px;
+    max-height: 70%;
+    max-width: 70%;
+    align-self: center;
+    justify-self: center;
   }
 }
 
 @media (min-width: 1000px) {
   body {
-    /* background-color: lightskyblue; */
     max-width: 2000px;
+    display: flex;
+    align-items: center;
   }
 
   .header {
@@ -241,17 +303,6 @@ body {
     margin-right: auto; */
   }
 
-  /* .aboutMeTitle {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-  .aboutMeText {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  } */
-
   .deviceBrowser {
     display: block;
   }
@@ -260,30 +311,38 @@ body {
   .deviceMobile {
     display: none;
   }
-}
 
-.header {
-  /* background-color: lightpink; */
-  grid-area: header;
-  display: flex;
-  /* justify-content: center;
-  align-content: center; */
-}
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
 
-.main {
-  /* background-color: lightblue; */
-  grid-area: main;
-  display: flex;
+  .project {
+    padding: 0px 0px;
+    margin: 20px;
+  }
 
-  /* justify-content: center;
-  align-content: center; */
-}
+  .footer {
+    flex-direction: row;
+  }
+  .contactDetails {
+    flex: 1;
+  }
+  .footerPicContainer {
+    display: flex;
+    flex: 1;
+    background-color: #3498db;
+  }
 
-.footer {
-  /* background-color: lightgoldenrodyellow; */
-  grid-area: footer;
-  display: flex;
-
-  /* justify-content: center;
-  align-content: center; */
+  .footerPic {
+    flex: 1;
+    display: flex;
+    margin: 50px;
+    max-height: 70%;
+    max-width: 70%;
+    align-self: center;
+    justify-self: center;
+  }
 }
