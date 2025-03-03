@@ -11,13 +11,13 @@ body {
   flex-direction: column;
   justify-content: center;
   max-width: 100%;
+  color: rgb(69, 67, 67);
 }
 
 /* shadows */
 .headerPic,
 .project,
-.footerPic,
-.aboutMeContainer {
+.footerPic {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -28,7 +28,7 @@ body {
   font-family: Playfair Display;
   display: flex;
   justify-content: center;
-  font-weight: 550;
+  font-weight: 350;
   font-size: clamp(1.5rem, 2rem, 4rem);
   margin: 15px;
 }
@@ -64,7 +64,7 @@ body {
 }
 /* header */
 .header {
-  background: linear-gradient(135deg, #3498db 50%, white 50%);
+  background: linear-gradient(155deg, #0891b2 50%, white 50%);
 }
 
 .headerPic {
@@ -74,7 +74,7 @@ body {
 }
 .headerTitle {
   position: absolute;
-  font-weight: bolder;
+  font-weight: 350;
   color: white;
 
   bottom: 0;
@@ -179,7 +179,7 @@ body {
   }
 
   .header {
-    background: linear-gradient(170deg, #3498db 70%, white 50%);
+    background: linear-gradient(165deg, #0891b2 70%, white 50%);
   }
   .header {
     display: grid;
@@ -196,10 +196,8 @@ body {
     grid-column: 1/4;
     grid-row: 1/4;
     width: 300px;
-    shape-outside: circle();
 
-    shape-outside: circle(); /* Forces text to wrap around a circular shape */
-
+    margin-left: 60px;
     /* max-width: 350px;
     max-height: 350px;
     left: 75px;
@@ -247,7 +245,7 @@ body {
     padding-left: 200px;
   }
   .aboutMeText {
-    padding-left: 220px;
+    padding-left: 160px;
 
     min-width: min-content;
     min-height: min-content;
@@ -312,9 +310,23 @@ body {
   .contactTitle {
     font-size: clamp(3rem, 4rem, 8rem);
   }
+  .aboutMeContainer {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .aboutMeTitle {
+    justify-content: start;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-bottom: 40px;
+  }
+
+  .aboutMeText {
+    padding-bottom: 60px;
+  }
 
   .headerTitle {
-    font-size: clamp(4rem, 5rem, 8rem);
+    font-size: clamp(4rem, 6rem, 8rem);
   }
 
   .projectTitle {
@@ -325,7 +337,9 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(165deg, #3498db 50%, white 50%);
+    background: linear-gradient(165deg, #0891b2 67%, white 33%);
+
+    padding-bottom: 100px;
   }
 
   .headerPic {
@@ -333,11 +347,11 @@ body {
     max-width: 700px;
     max-height: 100%;
     flex: 1;
-    margin: 90px 0px 10px 90px;
+    margin: 90px 0px 50px 150px;
   }
 
   .headerLinks {
-    display: none;
+    display: block;
   }
 
   .aboutMeContainer {
@@ -346,7 +360,8 @@ body {
     /* margin-left: auto;
     margin-right: auto; */
     z-index: 1;
-    margin: 0px 90px 0px 0px;
+    margin: 0px 150px 0px 0px;
+    background-color: white;
   }
 
   .deviceBrowser {
@@ -367,18 +382,20 @@ body {
 
   .project {
     padding: 0px 0px;
-    margin: 20px;
+    /* margin: 20px; */
 
     min-width: 300px;
     max-width: 550px;
     min-height: 600px;
-    padding: 20px;
+    /* padding: 20px; */
     margin: 20px;
   }
 
   .projectImage {
     display: flex;
     align-items: start;
+    margin: 0;
+    padding: 0;
   }
   .footer {
     flex-direction: row;
