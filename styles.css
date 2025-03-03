@@ -1,8 +1,7 @@
 /* Global settings */
 
 * {
-  font-family: "Courier New", Courier, monospace;
-  font-size: large;
+  font-family: Roboto;
 }
 
 body {
@@ -11,13 +10,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 100%;
 }
 
 /* shadows */
 .headerPic,
 .project,
-.footerPic {
+.footerPic,
+.aboutMeContainer {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -25,11 +25,17 @@ body {
 .aboutMeTitle,
 .mainTitle,
 .contactTitle {
+  font-family: Playfair Display;
   display: flex;
   justify-content: center;
   font-weight: 550;
   font-size: clamp(1.5rem, 2rem, 4rem);
   margin: 15px;
+}
+
+.headerTitle,
+.projectTitle {
+  font-family: Playfair Display;
 }
 
 .header,
@@ -41,7 +47,7 @@ body {
 
   height: auto;
   min-width: 170px;
-  max-width: auto;
+  width: 100vw;
 }
 .header,
 .main {
@@ -90,7 +96,7 @@ body {
 .aboutMeTitle {
 }
 .aboutMeText {
-  margin: 20px;
+  margin: 0px 40px 20px;
 }
 
 .headerLinks {
@@ -116,7 +122,7 @@ body {
   flex-direction: column;
 
   min-width: 160px;
-  max-width: 350px;
+  max-width: 330px;
   padding: 0px 0px;
   margin: 10px 0px;
 }
@@ -169,66 +175,84 @@ body {
 
   body {
     background-color: white;
-    max-width: 1000px;
+    max-width: 100%;
   }
 
   .header {
-    background: linear-gradient(170deg, #3498db 50%, white 50%);
+    background: linear-gradient(170deg, #3498db 70%, white 50%);
   }
   .header {
-    flex-direction: row;
-    position: relative;
-    align-self: center;
+    display: grid;
+    grid-template-columns: 6fr;
     max-width: 100%;
+    margin: auto;
+    position: relative;
+    /* max-width: 800px; */
     /* justify-items: center; */
   }
 
   .headerPic {
-    flex: 1;
-    position: absolute;
-    min-width: 250px;
-    min-height: 250px;
-    max-width: 350px;
+    display: grid;
+    grid-column: 1/4;
+    grid-row: 1/4;
+    width: 300px;
+    shape-outside: circle();
+
+    shape-outside: circle(); /* Forces text to wrap around a circular shape */
+
+    /* max-width: 350px;
     max-height: 350px;
     left: 75px;
     top: 0;
+
+    
+    
+    /* object-fit: cover; */
     z-index: 1;
-    object-fit: cover;
   }
   .headerTitle {
-    max-width: 400px;
-    position: relative;
+    display: grid;
+    /* max-width: 900px; */
+    grid-column: 2/3;
+    grid-row: 1/1;
+    text-align: left;
+
+    position: absolute;
     top: 0;
     left: -50px;
-    font-size: clamp(2rem, 10vw, 3rem);
+    font-size: clamp(1.5rem, 8vw, 3rem);
   }
+
+  .aboutMeContainer {
+    display: grid;
+    grid-column: 2/6;
+    grid-row: 2/6;
+  }
+
   .aboutMeContainer {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 80px;
+    margin-right: 40px;
     background-color: white;
-    max-height: 500px;
+    min-width: min-content;
+    min-height: min-content;
   }
 
   .headerLinks {
     display: none;
   }
-  .aboutMeContainer {
-    margin-top: 90px;
-    margin-left: 5px;
-    /* min-width: max-content; */
-    min-height: 200px;
-    max-width: 250px;
-    max-height: 350px;
-    padding: 10px;
+
+  .aboutMeTitle {
+    padding-top: 20px;
+    padding-left: 200px;
   }
   .aboutMeText {
-    position: absolute;
+    padding-left: 220px;
 
-    min-width: 100%;
-    min-height: 200px;
-    max-width: max-content;
-    max-height: 350px;
-    overflow-wrap: break-word;
+    min-width: min-content;
+    min-height: min-content;
   }
+
   main {
     display: flex;
   }
@@ -277,20 +301,39 @@ body {
 
 @media (min-width: 1000px) {
   body {
-    max-width: 2000px;
+    max-width: 100%;
     display: flex;
     align-items: center;
+    font-size: clamp(1.5rem, 2rem, 4rem);
+  }
+
+  .aboutMeTitle,
+  .mainTitle,
+  .contactTitle {
+    font-size: clamp(3rem, 4rem, 8rem);
+  }
+
+  .headerTitle {
+    font-size: clamp(4rem, 5rem, 8rem);
+  }
+
+  .projectTitle {
+    font-size: clamp(1.5rem, 2rem, 8rem);
   }
 
   .header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(165deg, #3498db 50%, white 50%);
   }
 
   .headerPic {
+    min-width: 300px;
+    max-width: 700px;
+    max-height: 100%;
     flex: 1;
-    margin: 10px 0px 10px 10px;
+    margin: 90px 0px 10px 90px;
   }
 
   .headerLinks {
@@ -299,8 +342,11 @@ body {
 
   .aboutMeContainer {
     flex: 1;
+    position: relative;
     /* margin-left: auto;
     margin-right: auto; */
+    z-index: 1;
+    margin: 0px 90px 0px 0px;
   }
 
   .deviceBrowser {
@@ -322,8 +368,18 @@ body {
   .project {
     padding: 0px 0px;
     margin: 20px;
+
+    min-width: 300px;
+    max-width: 550px;
+    min-height: 600px;
+    padding: 20px;
+    margin: 20px;
   }
 
+  .projectImage {
+    display: flex;
+    align-items: start;
+  }
   .footer {
     flex-direction: row;
   }
