@@ -6,10 +6,10 @@
 
 .svg,
 svg {
-  color: black;
   height: 32px;
   width: 32px;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -44,31 +44,23 @@ body {
   font-family: Playfair Display;
 }
 
+/* header - < 500px */
 .header,
 .main,
 .footer {
   display: flex;
   justify-content: center;
   flex-direction: column;
-
   height: auto;
   min-width: 170px;
   width: 100vw;
 }
+
 .header,
 .main {
   padding: 20px 0px;
 }
 
-/* Default settings for mobile */
-.deviceMobile {
-  display: none;
-}
-.deviceTablet,
-.deviceBrowser {
-  display: none;
-}
-/* header */
 .header {
   background: linear-gradient(155deg, #0891b2 50%, white 50%);
 }
@@ -78,19 +70,16 @@ body {
   display: flex;
   margin: 20px;
 }
+
 .headerTitle {
   position: absolute;
   font-weight: 350;
   color: white;
-
   bottom: 0;
   left: 0;
   right: 0;
   font-size: clamp(3rem, 15vw, 6rem);
   text-align: center;
-}
-
-.headerTitle {
   text-shadow: 2px 2px 5px black;
 }
 
@@ -99,8 +88,7 @@ body {
   flex-direction: column;
   flex: 1;
 }
-.aboutMeTitle {
-}
+
 .aboutMeText {
   margin: 0px 40px 20px;
 }
@@ -109,7 +97,7 @@ body {
   text-align: center;
 }
 
-/* main */
+/* main  < 500px */
 .main {
   display: flex;
   flex-direction: column;
@@ -122,11 +110,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .project {
   display: flex;
   justify-content: center;
   flex-direction: column;
-
   min-width: 160px;
   max-width: 330px;
   padding: 0px 0px;
@@ -143,7 +131,7 @@ body {
   padding: 20px;
 }
 
-/* footer */
+/* footer < 500px */
 
 .footer {
   display: flex;
@@ -152,11 +140,9 @@ body {
 
 .footerPic {
   display: flex;
-  /* height: 100%; Fill the full height of the parent */
   flex-grow: 1;
   max-width: 100%;
-  /* width: auto; Maintain aspect ratio */
-  object-fit: cover; /* Prevents distortion and fills the space */
+  object-fit: cover;
 }
 
 .contactDetails {
@@ -169,14 +155,13 @@ body {
 }
 
 /* MEDIA ENQUIRIES */
-
+/* > 500px, < 1000px */
 @media (min-width: 500px) and (max-width: 1000px) {
   .heaader,
   .main,
   .footer {
-    max-width: auto; /* Match body’s max-width */
-    /* width: 100%; */
-    margin: 0 auto; /* Centers footer if needed */
+    max-width: auto;
+    margin: 0 auto;
   }
 
   body {
@@ -184,6 +169,7 @@ body {
     max-width: 100%;
   }
 
+  /* header - > 500px, < 1000px   */
   .header {
     background: linear-gradient(165deg, #0891b2 70%, white 50%);
   }
@@ -193,8 +179,6 @@ body {
     max-width: 100%;
     margin: auto;
     position: relative;
-    /* max-width: 800px; */
-    /* justify-items: center; */
   }
 
   .headerPic {
@@ -202,25 +186,14 @@ body {
     grid-column: 1/4;
     grid-row: 1/4;
     width: 300px;
-
     margin-left: 60px;
-    /* max-width: 350px;
-    max-height: 350px;
-    left: 75px;
-    top: 0;
-
-    
-    
-    /* object-fit: cover; */
     z-index: 1;
   }
   .headerTitle {
     display: grid;
-    /* max-width: 900px; */
     grid-column: 2/3;
     grid-row: 1/1;
     text-align: left;
-
     position: absolute;
     top: 0;
     left: -50px;
@@ -257,6 +230,7 @@ body {
     min-height: min-content;
   }
 
+  /* main - > 500px, < 1000px */
   main {
     display: flex;
   }
@@ -272,13 +246,7 @@ body {
     margin: 20px;
   }
 
-  .deviceTablet {
-    display: block;
-  }
-  .deviceMobile,
-  .deviceBrowser {
-    display: none;
-  }
+  /* footer - > 500px, < 1000px */
 
   .footer {
     flex-direction: row;
@@ -303,6 +271,7 @@ body {
   }
 }
 
+/* MEDIA > 1000px */
 @media (min-width: 1000px) {
   body {
     max-width: 100%;
@@ -311,48 +280,27 @@ body {
     font-size: clamp(1.5rem, 2rem, 4rem);
   }
 
+  /* titles > 1000px* */
   .aboutMeTitle,
   .mainTitle,
   .contactTitle {
-    font-size: clamp(3rem, 4rem, 8rem);
-  }
-  .aboutMeContainer {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: clamp(1rem, 4rem, 8rem);
   }
 
-  .aboutMeTitle {
-    justify-content: start;
-    padding-top: 40px;
-    padding-left: 20px;
-    padding-bottom: 40px;
-  }
-
-  .aboutMeText {
-    padding-bottom: 60px;
-  }
-
-  .headerTitle {
-    font-size: clamp(4rem, 6rem, 8rem);
-  }
-
-  .projectTitle {
-    font-size: clamp(1.5rem, 2rem, 8rem);
-  }
+  /* header > 1000px*/
 
   .header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
     background: linear-gradient(165deg, #0891b2 67%, white 33%);
-
     padding-bottom: 100px;
   }
-
   .headerPic {
+    flex: 1;
     min-width: 300px;
     max-width: 700px;
     max-height: 100%;
-    flex: 1;
     margin: 90px 0px 50px 150px;
   }
 
@@ -363,21 +311,25 @@ body {
   .aboutMeContainer {
     flex: 1;
     position: relative;
-    /* margin-left: auto;
-    margin-right: auto; */
     z-index: 1;
     margin: 0px 150px 0px 0px;
     background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  .deviceBrowser {
-    display: block;
+  .aboutMeTitle {
+    justify-content: start;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-bottom: 40px;
+    font-size: clamp(4rem, 6rem, 8rem);
   }
 
-  .deviceTablet,
-  .deviceMobile {
-    display: none;
+  .aboutMeText {
+    padding-bottom: 60px;
   }
+
+  /* main > 1000px**/
 
   .projects {
     display: flex;
@@ -386,14 +338,14 @@ body {
     justify-content: center;
   }
 
+  .projectTitle {
+    font-size: clamp(1.5rem, 2rem, 8rem);
+  }
   .project {
     padding: 0px 0px;
-    /* margin: 20px; */
-
     min-width: 300px;
     max-width: 550px;
     min-height: 600px;
-    /* padding: 20px; */
     margin: 20px;
   }
 
@@ -403,6 +355,8 @@ body {
     margin: 0;
     padding: 0;
   }
+
+  /* footer > 1000px**/
   .footer {
     flex-direction: row;
   }
