@@ -153,6 +153,10 @@ body {
 .contactText {
   padding: 20px;
 }
+.footerLinks {
+  display: flex;
+  justify-content: center;
+}
 
 /* MEDIA ENQUIRIES */
 /* > 500px, < 1000px */
@@ -269,6 +273,11 @@ body {
     align-self: center;
     justify-self: center;
   }
+  .footerLinks {
+    display: flex;
+    justify-content: left;
+    padding-left: 20px;
+  }
 }
 
 /* MEDIA > 1000px */
@@ -377,5 +386,11 @@ body {
     max-width: 70%;
     align-self: center;
     justify-self: center;
+  }
+
+  .footerLinks {
+    display: flex;
+    justify-content: left;
+    padding-left: 20px;
   }
 }
